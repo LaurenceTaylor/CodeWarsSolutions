@@ -18,7 +18,7 @@ function even_or_odd(number) {
 }
 
 ////////////////////
-// Simpler solution:
+// Best practice:
 
 function even_or_odd(number) {
   return number % 2 ? "Odd" : "Even"   // ternary statement
@@ -37,4 +37,14 @@ function removeSmallest(numbers) {
   }
   delete numbers[min];
   return numbers.filter(Boolean);
+}
+
+////////////////////
+// Best practice:
+
+function removeSmallest(numbers) {
+  if(!numbers)return [];
+  var min=Math.min.apply(null,numbers);
+  numbers.splice(numbers.indexOf(min),1);
+  return numbers;
 }
