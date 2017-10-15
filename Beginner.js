@@ -48,3 +48,34 @@ function removeSmallest(numbers) {
   numbers.splice(numbers.indexOf(min),1);
   return numbers;
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////
+// Exes and Ohs
+/////////////////////////////////////////////////////////////////////////////////////////
+
+/* Check to see if a string has the same amount of 'x's and 'o's. 
+The method must return a boolean and be case insensitive. The string can contains any char. */
+
+function XO(str) {
+    var string = str.toLowerCase();
+    var countX = 0;
+    var countO = 0;
+    for (i = 0; i < string.length; i++) {
+      if (string[i] == 'x') {
+        countX += 1;
+      }
+      else if (string[i] == 'o') {
+        countO += 1;
+      }
+    }
+    return countX == countO;
+}
+
+////////////////////
+// Best practice:
+
+function XO(str) {
+  let x = str.match(/x/gi);
+  let o = str.match(/o/gi);
+  return (x && x.length) === (o && o.length);
+}
