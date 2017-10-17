@@ -101,3 +101,17 @@ function getCount(str) {
  function getCount(str) {
   return (str.match(/[aeiou]/ig)||[]).length;   // use regex instead
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////
+// Don't give me five!
+/////////////////////////////////////////////////////////////////////////////////////////
+
+function dontGiveMeFive(start, end) {
+  var fiveCount = 0;
+  for (var i = start; i <= end; i++) {
+    if (i.toString().indexOf('5') > -1) {
+      fiveCount += 1;
+    }
+  }
+  return end - start - fiveCount + 1;
+}
