@@ -115,3 +115,34 @@ function dontGiveMeFive(start, end) {
   }
   return end - start - fiveCount + 1;
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////
+// Commplementary DNA
+/////////////////////////////////////////////////////////////////////////////////////////
+
+function DNAStrand(dna){
+  var compDNA = '';
+  for (var i = 0; i < dna.length; i++) {
+    if (dna[i] == 'A') {compDNA = compDNA.concat('T')}
+    if (dna[i] == 'T') {compDNA = compDNA.concat('A')}
+    if (dna[i] == 'C') {compDNA = compDNA.concat('G')}
+    if (dna[i] == 'G') {compDNA = compDNA.concat('C')}
+  }
+  return compDNA;
+}
+
+////////////////////
+// Best practice:
+
+function DNAStrand(dna) {
+  return dna.replace(/./g, function(c) {
+    return DNAStrand.pairs[c]
+  })
+}
+
+DNAStrand.pairs = {
+  A: 'T',
+  T: 'A',
+  C: 'G',
+  G: 'C',
+}
