@@ -146,3 +146,24 @@ DNAStrand.pairs = {
   C: 'G',
   G: 'C',
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////
+// Give me the k first digits. Odd digits.
+/////////////////////////////////////////////////////////////////////////////////////////
+
+function findOddDigits(n, k) {
+  var odds = [];
+  var str = n.toString();
+  
+  for (var i = 0; i < str.length; i++) {
+    if (parseInt(str[i]) % 2 !== 0) {
+      odds.push(str[i]);
+    }
+  }
+  
+  if (k > str.length || k > odds.length || odds.filter(Boolean) == 0) {
+    return 0;
+  }
+  
+  return parseInt(odds.slice(0, k).join(''));
+}
