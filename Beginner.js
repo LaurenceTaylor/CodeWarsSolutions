@@ -161,9 +161,8 @@ function findOddDigits(n, k) {
     }
   }
   
-  if (k > str.length || k > odds.length || odds.filter(Boolean) == 0) {
+  if (k > str.length || k > odds.length || odds.filter(Boolean).length == 0 || k <= 0) {
     return 0;
   }
   
   return parseInt(odds.slice(0, k).join(''));
-}
