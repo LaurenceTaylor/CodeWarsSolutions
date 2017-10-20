@@ -166,3 +166,39 @@ function findOddDigits(n, k) {
   }
   
   return parseInt(odds.slice(0, k).join(''));
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+// Beginner Series #3 Sum of Numbers
+/////////////////////////////////////////////////////////////////////////////////////////
+
+ function GetSum( a,b ) {
+  var sum = 0;
+  
+  if (a == b) {
+    return a;
+  }
+  
+  if (a > b) {
+    for (var i = b; i <= a; i++) {
+      sum += i;
+    }
+  }
+  
+  if (b > a) {
+    for (var j = a; j <= b; j++) {
+      sum += j;
+    }
+  }
+  
+  return sum;
+}
+
+////////////////////
+// Best practice:
+
+const GetSum = (a, b) => {
+  let min = Math.min(a, b),
+      max = Math.max(a, b);
+  return (max - min + 1) * (min + max) / 2;
+}
