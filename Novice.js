@@ -55,12 +55,12 @@ function alphabetPosition(text) {
 /////////////////////////////////////////////////////////////////////////////////////////
 
 var uniqueInOrder=function(iterable){
-  var arr = [iterable[0]];
+  var result = [iterable[0]];
   
   for (var i = 1; i < iterable.length; i++) {
     if (iterable[i - 1] !== iterable[i]) {
       arr.push(iterable[i]);
     }
   }
-  return arr.filter(Boolean);
+  return result.filter(Boolean);
 }
