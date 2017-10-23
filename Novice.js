@@ -24,3 +24,15 @@ function reverseWords(str) {
 // Replace With Alphabet Position
 /////////////////////////////////////////////////////////////////////////////////////////
 
+function alphabetPosition(text) {
+  var upper = text.toUpperCase();
+  var numStr = '';
+  
+  for (var i = 0; i < upper.length; i++) {
+    if (/[A-Z]/.test(upper[i])) {
+      numStr = numStr.concat(upper.charCodeAt(i) - 64).concat(' ');
+    }
+  }
+  
+  return numStr.slice(0, -1);
+}
