@@ -64,3 +64,27 @@ var uniqueInOrder=function(iterable){
   }
   return result.filter(Boolean);
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////
+// Equal Sides Of An Array
+/////////////////////////////////////////////////////////////////////////////////////////
+
+function findEvenIndex(arr) {
+
+  for (var i = 0; i < arr.length; i++) {
+    var sumLeft = 0;
+    var sumRight = 0;
+    
+    sumLeft = arr.slice(0, i + 1).reduce(function(sum, value) {
+    return sum + value;
+    });
+    
+    sumRight = arr.slice(i, arr.length + 1).reduce(function(sum, value) {
+    return sum + value;
+    });
+    
+    if (sumLeft == sumRight) {return i};
+  }
+  
+  return -1;
+}
