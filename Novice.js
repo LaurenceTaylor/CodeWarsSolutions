@@ -56,12 +56,12 @@ function alphabetPosition(text) {
 // Unique In Order
 /////////////////////////////////////////////////////////////////////////////////////////
 
-var uniqueInOrder=function(iterable){
+var uniqueInOrder = function(iterable){
   var result = [iterable[0]];
   
-  for (var i = 1; i < iterable.length; i++) {
-    if (iterable[i - 1] !== iterable[i]) {
-      arr.push(iterable[i]);
+  for (var i = 1; i < iterable.length; i++) {         // start at i = 1 to avoid a negative index for the if statement
+    if (iterable[i - 1] !== iterable[i]) {            // if previous index != current index
+      result.push(iterable[i]);                       // push current index to result
     }
   }
   return result.filter(Boolean);
@@ -107,7 +107,7 @@ function persistence(num) {
       total *= parseInt(numStr[i]);                       // total becomes each digit multiplied together (999 -> 9*9*9)
     }
     
-    numStr = total.toString();                            // the total becomes the new number to multiply together
+    numStr = total.toString();                            // the total becomes the new number to multiply
     total = 1;                                            // reset total back to 1
     count += 1;                                           // add 1 to the count
   }
