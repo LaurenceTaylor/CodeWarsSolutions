@@ -74,21 +74,21 @@ var uniqueInOrder=function(iterable){
 function findEvenIndex(arr) {
 
   for (var i = 0; i < arr.length; i++) {
-    var sumLeft = 0;
+    var sumLeft = 0;                                                           // variables to store sum of left/ right side of arr
     var sumRight = 0;
     
-    sumLeft = arr.slice(0, i + 1).reduce(function(sum, value) {
+    sumLeft = arr.slice(0, i + 1).reduce(function(sum, value) {                // sum left side using reduce
     return sum + value;
     });
     
-    sumRight = arr.slice(i, arr.length + 1).reduce(function(sum, value) {
+    sumRight = arr.slice(i, arr.length + 1).reduce(function(sum, value) {      // sum right side using reduce
     return sum + value;
     });
     
-    if (sumLeft == sumRight) {return i};
+    if (sumLeft == sumRight) {return i};                                       // if sum left == sum right, return index
   }
   
-  return -1;
+  return -1;                                                                   // otherwise return -1
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -96,20 +96,20 @@ function findEvenIndex(arr) {
 /////////////////////////////////////////////////////////////////////////////////////////
 
 function persistence(num) {
-  if (num < 10) return 0;
+  if (num < 10) return 0;                                 // if a single digit, return 0
   
-  var numStr = num.toString();
-  var total = 1;
-  var count = 0;
+  var numStr = num.toString();                            // convert to string to allow iteration
+  var total = 1;                                          // total starts at 1 as multiplication is involved
+  var count = 0;                                          // counts the number of iterations
   
   while (numStr.length > 1) {
     for (var i = 0; i < numStr.length; i++) {
-      total *= parseInt(numStr[i]);
+      total *= parseInt(numStr[i]);                       // total becomes each digit multiplied together (999 -> 9*9*9)
     }
     
-    numStr = total.toString();
-    total = 1;
-    count += 1;
+    numStr = total.toString();                            // the total becomes the new number to multiply together
+    total = 1;                                            // reset total back to 1
+    count += 1;                                           // add 1 to the count
   }
   
   return count;
