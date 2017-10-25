@@ -22,7 +22,7 @@ function even_or_odd(number) {
 // Code by Balkoth, mortonfox, anton-gorbikov, Saha, tombusby, Nyalab (plus 763 more warriors)
 
 function even_or_odd(number) {
-  return number % 2 ? "Odd" : "Even"   // ternary statement
+  return number % 2 == 0 ? "Odd" : "Even"   // Use a ternary operator in lieu of if/ else
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -30,14 +30,14 @@ function even_or_odd(number) {
 /////////////////////////////////////////////////////////////////////////////////////////
 
 function removeSmallest(numbers) {
-  var min = 0;
+  var min = 0;                                 // place to store the index of the lowest number
   for (i = 0; i < numbers.length; i++) {
-    if (numbers[i] < numbers[min]) {
+    if (numbers[i] < numbers[min]) {           // if current index is lower than min index, current i becomes new min
       min = i;
     }
   }
-  delete numbers[min];
-  return numbers.filter(Boolean);
+  delete numbers[min];                         // delete minimum
+  return numbers.filter(Boolean);              // filter subsequent empty space
 }
 
 ////////////////////
@@ -59,18 +59,18 @@ function removeSmallest(numbers) {
 The method must return a boolean and be case insensitive. The string can contains any char. */
 
 function XO(str) {
-    var string = str.toLowerCase();
-    var countX = 0;
+    var string = str.toLowerCase();              // make string uniform lower case
+    var countX = 0;                              // create variables to stor X/ O counts
     var countO = 0;
     for (i = 0; i < string.length; i++) {
-      if (string[i] == 'x') {
+      if (string[i] == 'x') {                    // if an x, add to x count
         countX += 1;
       }
       else if (string[i] == 'o') {
-        countO += 1;
+        countO += 1;                             // if an o, add to o count
       }
     }
-    return countX == countO;
+    return countX == countO;                     // test is x and o counts are equal
 }
 
 ////////////////////
@@ -88,11 +88,11 @@ function XO(str) {
 /////////////////////////////////////////////////////////////////////////////////////////
 
 function getCount(str) {
-  var vowelsCount = 0;
+  var vowelsCount = 0;                                              // variable to count vowels
   for (i = 0; i < str.length; i++) {
-    if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' ||
+    if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' ||          // if statement checking for vowels
         str[i] == 'o' || str[i] == 'u') {
-        vowelsCount += 1;
+        vowelsCount += 1;                                           // if a vowel, count += 1
     }
   }
   return vowelsCount;
