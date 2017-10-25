@@ -3,16 +3,17 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 
 function reverseWords(str) {
-  var arr = str.split(' ');
+  var arr = str.split(' ');                             // split into an array of separate words
   
   for (var i = 0; i < arr.length; i++) {
-    arr[i] = arr[i].split('').reverse().join('');
+    arr[i] = arr[i].split('').reverse().join('');       // reverse each word individually
   }
-  return arr.join(' ');
+  return arr.join(' ');                                 // join array into string + spaces
 }
 
 ////////////////////
 // Best practice:
+// Code by OverZealous, mrkishi, adriaanbaelus, jnicol, chenglou, vas3a (plus 322 more warriors)
 
 function reverseWords(str) {
   return str.split(' ').map(function(word){
@@ -25,12 +26,12 @@ function reverseWords(str) {
 /////////////////////////////////////////////////////////////////////////////////////////
 
 function alphabetPosition(text) {
-  var upper = text.toUpperCase();
-  var numStr = '';
+  var upper = text.toUpperCase();                                       // make string uniform upper case
+  var numStr = '';                                                      // where solution will be stored
   
   for (var i = 0; i < upper.length; i++) {
-    if (/[A-Z]/.test(upper[i])) {
-      numStr = numStr.concat(upper.charCodeAt(i) - 64).concat(' ');
+    if (/[A-Z]/.test(upper[i])) {                                       // check if character is a letter
+      numStr = numStr.concat(upper.charCodeAt(i) - 64).concat(' ');     // if so concat charCode minus 64 (brings to range of 1 - 26)
     }
   }
   
@@ -39,6 +40,7 @@ function alphabetPosition(text) {
 
 ////////////////////
 // Best practice:
+// Code by jdemion, Fantom1991, moniquedesalvo, ChungGor, Devel00per, Dhvani Kakadiya (plus 44 more warriors)
 
 function alphabetPosition(text) {
   var result = "";
