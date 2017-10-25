@@ -55,9 +55,6 @@ function removeSmallest(numbers) {
 // Exes and Ohs
 /////////////////////////////////////////////////////////////////////////////////////////
 
-/* Check to see if a string has the same amount of 'x's and 'o's. 
-The method must return a boolean and be case insensitive. The string can contains any char. */
-
 function XO(str) {
     var string = str.toLowerCase();              // make string uniform lower case
     var countX = 0;                              // create variables to stor X/ O counts
@@ -102,8 +99,8 @@ function getCount(str) {
 // Best practice:
 // Code by Balkoth, dhensche, Azuaron, Raman_Kozar, Raman_Nerad, gazzaa (plus 34 more warriors)
 
- function getCount(str) {
-  return (str.match(/[aeiou]/ig)||[]).length;   // use regex instead
+function getCount(str) {
+ return (str.match(/[aeiou]/ig)||[]).length;
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -120,13 +117,27 @@ function dontGiveMeFive(start, end) {
   return end - start - fiveCount + 1;
 }
 
+////////////////////
+// Best practice:
+// Code by ooflorent, james1968, its-thyme, NicholasASC4, nasa leonard, amasc4 (plus 7 more warriors)
+
+function dontGiveMeFive(start, end) {
+  let count = 0
+  for (let i = start; i <= end; i++) {
+    if (!/5/.test(i)) {
+      count++
+    }
+  }
+  return count
+}
+
 /////////////////////////////////////////////////////////////////////////////////////////
 // Complementary DNA
 /////////////////////////////////////////////////////////////////////////////////////////
 
 function DNAStrand(dna){
   var compDNA = '';
-  for (var i = 0; i < dna.length; i++) {
+  for (var i = 0; i < dna.length; i++) {                     // loop through the string, pushing the replacement DNA to a new string
     if (dna[i] == 'A') {compDNA = compDNA.concat('T')}
     if (dna[i] == 'T') {compDNA = compDNA.concat('A')}
     if (dna[i] == 'C') {compDNA = compDNA.concat('G')}
@@ -162,29 +173,29 @@ function findOddDigits(n, k) {
   
   for (var i = 0; i < str.length; i++) {
     if (parseInt(str[i]) % 2 !== 0) {
-      odds.push(str[i]);
+      odds.push(str[i]);                                                                    // if an odd number, push to new array
     }
   }
   
-  if (k > str.length || k > odds.length || odds.filter(Boolean).length == 0 || k <= 0) {
+  if (k > str.length || k > odds.length || odds.filter(Boolean).length == 0 || k <= 0) {    // if invalid n or k values, return 0
     return 0;
   }
   
-  return parseInt(odds.slice(0, k).join(''));
+  return parseInt(odds.slice(0, k).join(''));                                               // return string of specified length
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
 // Beginner Series #3 Sum of Numbers
 /////////////////////////////////////////////////////////////////////////////////////////
 
- function GetSum( a,b ) {
+ function GetSum(a, b) {
   var sum = 0;
   
-  if (a == b) {
+  if (a == b) {                             // if an and b are equal, return either a or b (the 'sum' between them)
     return a;
   }
   
-  if (a > b) {
+  if (a > b) {                              // whether a or b is larger determines 'direction' of iteration
     for (var i = b; i <= a; i++) {
       sum += i;
     }
