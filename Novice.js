@@ -88,3 +88,27 @@ function findEvenIndex(arr) {
   
   return -1;
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////
+// Persistent Bugger.
+/////////////////////////////////////////////////////////////////////////////////////////
+
+function persistence(num) {
+  if (num < 10) return 0;
+  
+  var numStr = num.toString();
+  var total = 1;
+  var count = 0;
+  
+  while (numStr.length > 1) {
+    for (var i = 0; i < numStr.length; i++) {
+      total *= parseInt(numStr[i]);
+    }
+    
+    numStr = total.toString();
+    total = 1;
+    count += 1;
+  }
+  
+  return count;
+}
