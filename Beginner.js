@@ -3,7 +3,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 
 function removeChar(str){
- return str.slice(1, str.length - 1)   // N.B. this can just be str.slice(1, -1)
+ return str.slice(1, -1);
 };
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -19,6 +19,7 @@ function even_or_odd(number) {
 
 ////////////////////
 // Best practice:
+// Code by Balkoth, mortonfox, anton-gorbikov, Saha, tombusby, Nyalab (plus 763 more warriors)
 
 function even_or_odd(number) {
   return number % 2 ? "Odd" : "Even"   // ternary statement
@@ -41,6 +42,7 @@ function removeSmallest(numbers) {
 
 ////////////////////
 // Best practice:
+// Code by crazyYuyang, ChungGor, mattfro333, Trodjo, marioepugh, pig858
 
 function removeSmallest(numbers) {
   if(!numbers)return [];
@@ -73,6 +75,7 @@ function XO(str) {
 
 ////////////////////
 // Best practice:
+// Code by -Downfall, kirilloid, xsm2016, Brendenjones12, philipwerner, kickh (plus 2 more warriors)
 
 function XO(str) {
   let x = str.match(/x/gi);
@@ -97,6 +100,7 @@ function getCount(str) {
 
 ////////////////////
 // Best practice:
+// Code by Balkoth, dhensche, Azuaron, Raman_Kozar, Raman_Nerad, gazzaa (plus 34 more warriors)
 
  function getCount(str) {
   return (str.match(/[aeiou]/ig)||[]).length;   // use regex instead
@@ -117,7 +121,7 @@ function dontGiveMeFive(start, end) {
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
-// Commplementary DNA
+// Complementary DNA
 /////////////////////////////////////////////////////////////////////////////////////////
 
 function DNAStrand(dna){
@@ -133,6 +137,7 @@ function DNAStrand(dna){
 
 ////////////////////
 // Best practice:
+// Code by ooflorent, saiful110816, Celia, canmeepo, spencer523, mexin (plus 19 more warriors)
 
 function DNAStrand(dna) {
   return dna.replace(/./g, function(c) {
@@ -196,6 +201,7 @@ function findOddDigits(n, k) {
 
 ////////////////////
 // Best practice:
+// Code by ryanwaits, colbydauph, -Downfall, saiful110816, GitauHarrison, Alicemaina (plus 2 more warriors)
 
 const GetSum = (a, b) => {
   let min = Math.min(a, b),
