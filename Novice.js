@@ -114,3 +114,18 @@ function persistence(num) {
   
   return count;
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////
+// Tribonacci Sequence
+/////////////////////////////////////////////////////////////////////////////////////////
+
+function tribonacci(signature,n){
+  var seq = signature;
+  if (n < 4) return seq.slice(0, n);
+  
+  for (var i = 3; i < n; i++) {
+    seq.push(seq[i - 3] + seq[i - 2] + seq[i - 1]);
+  }
+  
+  return seq;
+}
