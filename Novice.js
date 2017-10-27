@@ -135,11 +135,11 @@ function tribonacci(signature,n){
 /////////////////////////////////////////////////////////////////////////////////////////
 
 function isPrime(num) {
-  if (num < 2) return false;
+  if (num < 2) return false;                    // negative numbers, 0 and 1 are not prime
   
-  for (var i = 2; i < num; i++) {
-    if (num % i == 0) {
-      return false;
+  for (var i = 2; i < num; i++) {               // divide num by i values from 2 to 'num - 1'
+    if (num % i == 0) {                         // all numbers can be divided by 1 or themselves so irrelevant
+      return false;                             // if it can be divided with no remainder, it is not a prime
     }
   }
   
@@ -151,6 +151,6 @@ function isPrime(num) {
 // Code by reggna, FunGuy, Mattordrag, sad, user3769065, Meow (plus 5 more warriors)
 
 function isPrime(num) {
-  for (var i = 2; i < num; i++) if (num % i == 0) return false;
+  for (var i = 2; i < num; i++) if (num % i == 0) return false;      // similar solution, but a clever way of writing the code
   return num >= 2; 
 }
