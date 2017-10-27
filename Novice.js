@@ -129,3 +129,28 @@ function tribonacci(signature,n){
   
   return result;
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////
+// Is a number prime?
+/////////////////////////////////////////////////////////////////////////////////////////
+
+function isPrime(num) {
+  if (num < 2) return false;
+  
+  for (var i = 2; i < num; i++) {
+    if (num % i == 0) {
+      return false;
+    }
+  }
+  
+  return true;
+}
+
+////////////////////
+// Best practice:
+// Code by reggna, FunGuy, Mattordrag, sad, user3769065, Meow (plus 5 more warriors)
+
+function isPrime(num) {
+  for (var i = 2; i < num; i++) if (num % i == 0) return false;
+  return num >= 2; 
+}
