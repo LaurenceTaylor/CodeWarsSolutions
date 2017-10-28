@@ -154,3 +154,55 @@ function isPrime(num) {
   for (var i = 2; i < num; i++) if (num % i == 0) return false;      // similar solution, but a clever way of writing the code
   return num >= 2; 
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////
+// Validate Credit Card Number
+/////////////////////////////////////////////////////////////////////////////////////////
+
+function validate(n){
+  var cNumber = (n + '').split('').map(function(t){return parseInt(t)});
+  
+  if (cNumber.length % 2 == 0) {
+    for (var i = 0; i < cNumber.length; i += 2) {
+      cNumber[i] = cNumber[i] * 2;
+      if (cNumber[i] > 9) {cNumber[i] = cNumber[i] - 9}
+    }
+  }
+  
+  else {
+    for (var j = 1; j < cNumber.length; j += 2) {
+      cNumber[j] = cNumber[j] * 2;
+      if (cNumber[j] > 9) {cNumber[j] = cNumber[j] - 9}
+    }
+  }
+  
+  var total = cNumber.reduce(function(sum, value) {
+    return sum + value;
+  });
+  
+  return total % 10 == 0;
+}
+
+////////////////////
+// Best practice:
+// Code by tbaron, Shevsky, Motso, vorpixdigital, mvk0
+
+function validate(n){
+  var sum = 0;
+
+  while (n > 0) {
+    var a = n % 10;
+    n = Math.floor(n / 10);
+    
+    var b = (n % 10) * 2;
+    n = Math.floor(n / 10);
+    
+    if (b > 9) {
+      b -= 9;
+    }
+    
+    sum += a + b;
+  }
+  
+  return sum % 10 == 0;
+}
