@@ -220,3 +220,15 @@ function solution(number){
   }
   return total;
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////
+// Grouped by commas
+/////////////////////////////////////////////////////////////////////////////////////////
+
+function groupByCommas(n) {
+  var arr = n.toString().split('').reverse();
+  for (var i = 0; i < arr.length; i += 4) {
+      arr.splice(i, 0, ',');
+  }
+  return arr.reverse().slice(0, -1).join('');
+}
